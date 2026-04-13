@@ -230,7 +230,8 @@ def delete_file(filename):
     conn.commit()
     conn.close()
 
-    path = os.path.join("uploads", filename)
+    path = os.path.join(UPLOAD_FOLDER, filename)
+
     if os.path.exists(path):
         os.remove(path)
 
