@@ -1,6 +1,9 @@
 import sqlite3
 
-conn = sqlite3.connect("database.db")
+conn = def get_db():
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    return sqlite3.connect(os.path.join(BASE_DIR, "database.db"))
+
 
 conn.execute("""
 CREATE TABLE users(
